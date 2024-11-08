@@ -14,6 +14,15 @@
   }
 }
 
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar in WebKit browsers */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* Hides the scrollbar in IE and Edge */
+  scrollbar-width: none; /* Hides the scrollbar in Firefox */
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
