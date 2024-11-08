@@ -1,7 +1,7 @@
 import React from "react";
 const Hero = () => {
   return (
-    <div className="py-10 sm:py-20 mx-auto w-10/12 sm:w-1/2 flex flex-col justify-center items-center">
+    <div className="py-10 sm:py-20 mx-auto w-10/12 lg:w-1/2 flex flex-col justify-center items-center">
       <p
         style={{ animationDelay: "0.7s" }}
         className="bg-[#f7f6f6] inline-flex items-center gap-2 no-underline text-[#221d1d] text-xs font-medium leading-[105%] tracking-[-0.00563rem] opacity-0 transform transition-all duration-[0.1s] ease-[ease] animate-fade-up px-3 py-2 rounded-[6.1875rem]"

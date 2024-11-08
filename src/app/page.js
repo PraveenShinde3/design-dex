@@ -5,7 +5,7 @@ import { TagsFilterBar } from "@/components/TagsFilterBar";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen p-8 pb-20 items-center justify-center w-screen  gap-2 sm:p-8 font-[family-name:var(--font-geist-sans)]">
+    <div className="flex flex-col min-h-screen p-8 pb-20 items-center justify-center max-w-screen  gap-2 sm:p-8 font-[family-name:var(--font-geist-sans)]">
       <div className="container flex-1  ">
         <Header />
         <Hero />
