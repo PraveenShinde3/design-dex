@@ -9,7 +9,7 @@ const ResourcesCardHolder = ({ resources }) => {
   return (
     <div>
       {resources.length > 0 ? (
-        <div className="px-[2rem] py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-8 ">
+        <div className="sm:px-[2rem] py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-8 ">
           {resources.map((resource, index) => (
             <div
               key={resource.id}
