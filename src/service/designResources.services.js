@@ -3,7 +3,7 @@ import axios from "axios";
 class DesignResource {
   constructor(baseURL) {
     this.client = axios.create({
-      baseURL: baseURL || "http://localhost:3000/api/design-resources",
+      baseURL: baseURL || "/api/design-resources",
       headers: { "Content-Type": "application/json" },
     });
   }
