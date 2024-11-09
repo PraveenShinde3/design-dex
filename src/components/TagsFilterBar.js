@@ -1,41 +1,12 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import DesignResource from "@/service/designResources.services.js";
-
-const designResource = new DesignResource();
-
-export const TagsFilterBar = () => {
-  const [categories, setCategories] = useState([]);
-  const [selectedCategoryId, setSelectedCategoryId] = useState(1);
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const fetchCategories = await designResource.getCategories();
-        const storedCategories = JSON.parse(
-          localStorage.getItem("categories") || "[]"
-        );
-        if (
-          JSON.stringify(storedCategories) !== JSON.stringify(fetchCategories)
-        ) {
-          localStorage.setItem("categories", JSON.stringify(fetchCategories));
-          setCategories(fetchCategories);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-    const storedCategories = JSON.parse(localStorage.getItem("categories"));
-    if (storedCategories) {
-      setCategories(storedCategories);
-    }
-    fetchData();
-  }, []);
-
+export const TagsFilterBar = ({
+  categories,
+  setSelectedCategoryId,
+  selectedCategoryId,
+}) => {
   return (
     <div
       style={{ animationDelay: "1s" }}
-      className="flex gap-2 justify-center overflow-auto scrollbar-hidden opacity-0 transform transition-all animate-fade"
+      className="sticky top-0 z-10 bg-white py-4 flex gap-2 justify-center overflow-auto scrollbar-hidden opacity-0 transform transition-all animate-fade"
     >
       {categories.length > 0 ? (
         categories.map((category) => (

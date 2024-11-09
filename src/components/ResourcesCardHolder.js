@@ -5,37 +5,21 @@ import DesignResource from "@/service/designResources.services";
 
 const designResource = new DesignResource();
 
-const ResourcesCardHolder = () => {
-  const [resources, setResources] = useState([]);
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const fetchResources = await designResource.getAllResources();
-        const storedResources = JSON.parse(
-          localStorage.getItem("resources") || "[]"
-        );
-        if (
-          JSON.stringify(storedResources) !== JSON.stringify(fetchResources)
-        ) {
-          localStorage.setItem("resources", JSON.stringify(fetchResources));
-          setResources(fetchResources);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
-    const storedResources = JSON.parse(localStorage.getItem("resources"));
-    if (storedResources) {
-      setResources(storedResources);
-    }
-    fetchData();
-  }, []);
+const ResourcesCardHolder = ({ resources }) => {
   return (
     <div>
       {resources.length > 0 ? (
-        <div className="px-[2rem] py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
-          {resources.map((resource) => (
-            <Card key={resource.id} resource={resource} />
+        <div className="px-[2rem] py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-8 ">
+          {resources.map((resource, index) => (
+            <div
+              key={resource.id}
+              style={{
+                animationDelay: `${index * 0.1}s`,
+              }}
+              className="animate-fade opacity-0 transform transition-all duration-200 ease-in-out"
+            >
+              <Card resource={resource} />
+            </div>
           ))}
         </div>
       ) : (

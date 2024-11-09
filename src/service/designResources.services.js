@@ -12,7 +12,6 @@ class DesignResource {
   async getCategories() {
     try {
       const response = await this.client.get("/categories");
-      console.log("hiiiiiiiiiiiiiiiii");
       return response.data;
     } catch (error) {
       console.error("Error fetching categories:", error);

@@ -17,7 +17,7 @@ export async function GET(req) {
         status: 500,
       });
     }
-    console.log(categories);
+    // console.log(categories);
     return new Response(JSON.stringify(categories), { status: 200 });
   }
 
@@ -31,7 +31,7 @@ export async function GET(req) {
         logo_img,
         link,
         created_at,
-        category_id: design_categories (tag_name)
+        category_id: design_categories (id,tag_name)
       `);
 
     if (error) {

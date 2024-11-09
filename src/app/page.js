@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import ResourcesCardHolder from "@/components/ResourcesCardHolder";
-import { TagsFilterBar } from "@/components/TagsFilterBar";
+import ResourcesSection from "@/components/ResourcesSection";
 
 export default function Home() {
   return (
@@ -9,8 +8,7 @@ export default function Home() {
       <div className="container flex-1  ">
         <Header />
         <Hero />
-        <TagsFilterBar />
-        <ResourcesCardHolder />
+        <ResourcesSection />
       </div>
       <footer className="container row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
