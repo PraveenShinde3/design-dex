@@ -1,37 +1,12 @@
-"use client";
-
-import { useRef, useState, useEffect } from "react";
 export const TagsFilterBar = ({
   categories,
   setSelectedCategoryId,
   selectedCategoryId,
 }) => {
-  const [isOverflowing, setIsOverflowing] = useState(false);
-  const textRef = useRef(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (textRef.current) {
-        setIsOverflowing(
-          textRef.current.scrollWidth > textRef.current.clientWidth
-        );
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <div
       style={{ animationDelay: "1s" }}
-      className={`sticky top-0 z-10 bg-white py-4 flex gap-2 overflow-auto scrollbar-hidden opacity-0 transform transition-all animate-fade ${
-        isOverflowing ? "justify-start" : "justify-center"
-      }`}
-      ref={textRef}
+      className={`sticky top-0 z-10 bg-white py-4 flex gap-2 overflow-auto justify-start scrollbar-hidden opacity-0 transform transition-all animate-fade `}
     >
       {categories.length > 0 ? (
         categories.map((category) => (
@@ -55,4 +30,3 @@ export const TagsFilterBar = ({
     </div>
   );
 };
-
