@@ -11,7 +11,7 @@ export const TagsFilterBar = ({
       {categories.length > 0 ? (
         categories.map((category) => (
           <button
-            className={` hover:bg-zinc-200 whitespace-nowrap cursor-pointer inline-flex items-center gap-2 no-underline hover:text-black text-xs font-medium leading-[105%] tracking-[-0.00563rem] transition-all duration-[0.2s] ease-in-out px-3 py-2 rounded-[6.1875rem] ${
+            className={` hover:bg-zinc-200 whitespace-nowrap cursor-pointer inline-flex items-center gap-2 no-underline hover:text-black text-xs font-medium leading-[105%] tracking-[-0.00563rem] transition-all duration-[0.2s] ease-in-out pl-3 pr-1 py-1 rounded-[6.1875rem] ${
               selectedCategoryId === category.id
                 ? "text-black bg-zinc-200"
                 : "text-zinc-600 bg-[#f7f6f6]"
@@ -19,7 +19,16 @@ export const TagsFilterBar = ({
             key={category.id}
             onClick={() => setSelectedCategoryId(category.id)}
           >
-            {category.tag_name} . 12
+            {category.tag_name}{" "}
+            <span
+              className={` px-2 py-1 rounded-full ${
+                selectedCategoryId === category.id
+                  ? "bg-zinc-100"
+                  : "bg-zinc-200"
+              }`}
+            >
+              112
+            </span>
           </button>
         ))
       ) : (
