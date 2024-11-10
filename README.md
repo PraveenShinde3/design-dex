@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Designdex
 
-## Getting Started
+Designdex is a curated platform that provides design resources for UI/UX professionals and developers. It aims to streamline the discovery of high-quality design assets, from fonts and gradients to color schemes and components, categorized for easy browsing. The project is built using Next.js, React, and Tailwind CSS, with local storage caching to improve performance and user experience.
 
-First, run the development server:
+## Project Demo
+- **Live Site**: [Designdex](https://designdex.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Curated Design Resources**: Access to categorized design resources, including fonts, gradients, icons, and illustrations.
+- **Category-wise Filtering**: Easily browse resources by category tags such as Portfolio, Fonts, Inspiration, Colors, and more.
+- **Local Storage Caching**: Caches categories and resources locally, enhancing performance and reducing redundant API calls.
+- **Responsive Design**: Optimized for both desktop and mobile viewing.
+- **Dynamic Counting**: Each category displays the number of resources available; the "All" category shows the total count.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Technologies Used
 
-## Learn More
+- **Frontend**: Next.js, React, Tailwind CSS
+- **State Management**: React Context API
+- **Data Fetching**: REST API
+- **Local Storage**: For caching categories and resources
 
-To learn more about Next.js, take a look at the following resources:
+## Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To set up Designdex locally:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/yourusername/designdex.git
+    cd designdex
+    ```
 
-## Deploy on Vercel
+2. **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Create environment variables**:  
+   Create a `.env.local` file in the root directory and add any necessary environment variables (e.g., API endpoint for fetching resources).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Run the development server**:
+    ```bash
+    npm run dev
+    ```
+
+5. **Open**:
+   Go to [http://localhost:3000](http://localhost:3000) to view the app locally.
+
+## Usage
+
+Once the app is running:
+
+- **Browsing Categories**: Click on any category to filter resources based on the selected tag.
+- **Resource Count**: View the total count of resources available under each category.
+- **Caching**: The app stores categories and resources in local storage to improve load times. Cached data will be refreshed upon detecting updates.
