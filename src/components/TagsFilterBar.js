@@ -12,22 +12,22 @@ export const TagsFilterBar = ({
         categories.map((category) => (
           <button
             className={` hover:bg-zinc-200 whitespace-nowrap cursor-pointer inline-flex items-center gap-2 no-underline hover:text-black text-xs font-medium leading-[105%] tracking-[-0.00563rem] transition-all duration-[0.2s] ease-in-out pl-3 pr-1 py-1 rounded-[6.1875rem] ${
-              selectedCategoryId === category.id
+              selectedCategoryId === category.category_id
                 ? "text-black bg-zinc-200"
                 : "text-zinc-600 bg-[#f7f6f6]"
             }`}
-            key={category.id}
-            onClick={() => setSelectedCategoryId(category.id)}
+            key={category.category_id}
+            onClick={() => setSelectedCategoryId(category.category_id)}
           >
-            {category.tag_name}{" "}
+            {category.category_name}{" "}
             <span
               className={` px-2 py-1 rounded-full ${
-                selectedCategoryId === category.id
+                selectedCategoryId === category.category_id
                   ? "bg-zinc-100"
                   : "bg-zinc-200"
               }`}
             >
-              112
+              {category.count}
             </span>
           </button>
         ))
