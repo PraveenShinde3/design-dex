@@ -5,7 +5,7 @@ import { TiArrowUp } from "react-icons/ti";
 const Card = ({ resource }) => {
   return (
     <Link href={resource.link} target="_blank">
-      <div className="hover:scale-[1.02] transition-all ease-in-out duration-300">
+      <div className="group hover:scale-[1.02] transition-all ease-in-out duration-300">
         <div className="rounded-lg bg-[#f7f6f6] h-fit pl-4 pt-4">
           <img
             className="object-cover w-full h-full rounded-tl-md"
@@ -23,7 +23,7 @@ const Card = ({ resource }) => {
             />
             <p className="text-xs font-medium">{resource.name}</p>
           </div>
-          <div>
+          <div className="hidden group-hover:block transition-all ease-in-out animate-fade">
             <TiArrowUp className=" rotate-45" size="1.2rem" />
           </div>
         </div>
