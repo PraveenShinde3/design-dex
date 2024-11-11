@@ -18,7 +18,7 @@ const Card = ({ resource }) => {
             <img
               src={resource.logo_img}
               alt={resource.title}
-              className="w-[20px] h-auto max-h-[20px]"
+              className="w-[20px] h-auto max-h-[20px] rounded"
               loading="lazy"
             />
             <p className="text-xs font-medium">{resource.name}</p>
